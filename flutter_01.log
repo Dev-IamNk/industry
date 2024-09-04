@@ -1,0 +1,80 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run -d chrome --web-port=8000
+
+## exception
+
+FileSystemException: FileSystemException: writeFrom failed, path = 'C:\Users\Dell\AppData\Roaming\.dart-tool\dart-flutter-telemetry.log' (OS Error: There is not enough space on the disk.
+, errno = 112)
+
+```
+#0      _RandomAccessFile.writeFromSync (dart:io/file_impl.dart:905:7)
+#1      _File.writeAsBytesSync (dart:io/file_impl.dart:646:14)
+#2      _File.writeAsStringSync (dart:io/file_impl.dart:668:5)
+#3      ForwardingFile.writeAsStringSync (package:file/src/forwarding/forwarding_file.dart:150:16)
+#4      LogHandler.save (package:unified_analytics/src/log_handler.dart:296:15)
+#5      AnalyticsImpl.send (package:unified_analytics/src/analytics.dart:622:17)
+#6      ResidentWebRunner.restart (package:flutter_tools/src/isolated/resident_web_runner.dart:467:18)
+<asynchronous suspension>
+#7      TerminalHandler._commonTerminalInputHandler (package:flutter_tools/src/resident_runner.dart:1801:40)
+<asynchronous suspension>
+#8      TerminalHandler.processTerminalInput (package:flutter_tools/src/resident_runner.dart:1841:7)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.22.2, on Microsoft Windows [Version 10.0.22621.3593], locale en-IN)
+    [32m•[39m Flutter version 3.22.2 on channel stable at C:\src\flutter
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision 761747bfc5 (3 weeks ago), 2024-06-05 22:15:13 +0200
+    [32m•[39m Engine revision edd8546116
+    [32m•[39m Dart version 3.4.3
+    [32m•[39m DevTools version 2.34.3
+
+[32m[✓][39m Windows Version (Installed version of Windows is version 10 or higher)
+
+[33m[!][39m Android toolchain - develop for Android devices (Android SDK version 34.0.0)
+    [32m•[39m Android SDK at C:\Users\Dell\AppData\Local\Android\sdk
+    [31m✗[39m cmdline-tools component is missing
+      Run `path/to/sdkmanager --install "cmdline-tools;latest"`
+      See https://developer.android.com/studio/command-line for more details.
+    [31m✗[39m Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/docs/get-started/install/windows#android-setup for more details.
+
+[32m[✓][39m Chrome - develop for the web
+    [32m•[39m Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[33m[!][39m Visual Studio - develop Windows apps (Visual Studio Build Tools 2019 16.11.36)
+    [32m•[39m Visual Studio at C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools
+    [32m•[39m Visual Studio Build Tools 2019 version 16.11.34902.97
+    [31m✗[39m The current Visual Studio installation is incomplete.
+      Please use Visual Studio Installer to complete the installation or reinstall Visual Studio.
+
+[32m[✓][39m Android Studio (version 2024.1)
+    [32m•[39m Android Studio at C:\Program Files\Android\Android Studio1
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    [32m•[39m Java version OpenJDK Runtime Environment (build 17.0.10+0--11609105)
+
+[32m[✓][39m VS Code (version 1.90.2)
+    [32m•[39m VS Code at C:\Users\Dell\AppData\Local\Programs\Microsoft VS Code
+    [32m•[39m Flutter extension version 3.90.0
+
+[32m[✓][39m Connected device (3 available)
+    [32m•[39m Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.22621.3593]
+    [32m•[39m Chrome (web)      • chrome  • web-javascript • Google Chrome 126.0.6478.126
+    [32m•[39m Edge (web)        • edge    • web-javascript • Microsoft Edge 126.0.2592.68
+
+[32m[✓][39m Network resources
+    [32m•[39m All expected network resources are available.
+
+[33m![39m Doctor found issues in 2 categories.
+```
